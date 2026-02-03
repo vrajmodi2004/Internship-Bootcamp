@@ -4,7 +4,7 @@ This repository contains weekly frontend development deliverables completed as p
 
 Each week focuses on building practical frontend skills through hands-on projects and progressive improvement.
 
-Currently, Week 1 deliverable has been completed, and future weeks will be added as development progresses.
+Currently, Week 1 and Week 2 deliverables have been completed, and future weeks will be added as development progresses.
 
 ---
 
@@ -24,15 +24,52 @@ The project focuses on correct semantic structuring of content and accessibility
 - Metadata and accessibility improvements
 - Clean and readable markup
 
-📂 Project Folder: `week1-semantic-profile-page`
+**Technologies**: HTML5  
+📂 **Project Folder**: `week1-semantic-profile-page`
 
 ---
 
-## 🛠 Technologies Used So Far
-- HTML5
-- Git & GitHub
+### ✅ Week 2 — BookNest Landing Page
 
-Future deliverables will introduce CSS, JavaScript, testing, and tooling concepts.
+A premium, responsive book gallery landing page built with **HTML5 and CSS3**.
+
+The project showcases modern web design principles with focus on responsive design, accessibility, and clean CSS architecture.
+
+**Key highlights**
+- **Flexbox & Grid Layouts** - Modern layout techniques
+- **Responsive Design** - Mobile-first approach with 3 breakpoints (Desktop: 1200px+, Tablet: 768px, Mobile: 480px)
+- **CSS Architecture** - Well-organized CSS with variables, modular structure, and proper commenting
+- **Accessibility** - WCAG 2.1 compliant with skip links, ARIA labels, keyboard navigation
+- **HTML5 Semantics** - Proper semantic markup with `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`
+- **Media Queries** - Complete responsive implementation
+- **Modern UI/UX** - Gradient overlays, animations, glassmorphism effects
+- **CSS Fundamentals** - Variables, transitions, animations, pseudo-elements
+- **Git Basics** - Project ready for version control
+
+**Features**
+- Animated hero section with floating background elements
+- Featured books grid with hover effects
+- Genre browsing section
+- Newsletter subscription form
+- Responsive navigation bar
+- Professional footer with social links
+- Search functionality with SVG icons
+- Color palette: Browns (#8B5A3C), Reds (#C41E3A), Golds (#D4A574)
+
+**Technologies**: HTML5, CSS3, Responsive Design  
+📂 **Project Folder**: `week2-landing-page`
+
+---
+
+## 🛠 Technologies Used
+
+- **HTML5** - Semantic markup, accessibility
+- **CSS3** - Flexbox, Grid, Media Queries, Animations, Variables
+- **Responsive Design** - Mobile-first approach
+- **Web Accessibility** - WCAG 2.1 compliance
+- **Git & GitHub** - Version control
+
+Future deliverables will introduce JavaScript interactivity, frameworks, and advanced tooling concepts.
 
 ---
 
