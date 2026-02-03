@@ -325,3 +325,6 @@ This project demonstrates:
 ---
 
 *BookNest - Discover Your Next Great Read 📚*
+
+
+![Lighthouse Score](../week2-landing-page/assets/lighthouse-score.png)
