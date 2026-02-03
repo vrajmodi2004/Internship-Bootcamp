@@ -57,4 +57,4 @@ Week1-semantic-profile/
 
 Lighthouse audit showing performance and accessibility compliance:
 
-![Lighthouse Score](../Week1-semantic-profile/assests/lighthouse-score.png)
+![Lighthouse Score](../week1-semantic-profile-page/assests/lighthouse-score.png)
