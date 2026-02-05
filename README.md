@@ -4,7 +4,7 @@ This repository contains weekly frontend development deliverables completed as p
 
 Each week focuses on building practical frontend skills through hands-on projects and progressive improvement.
 
-Currently, Week 1 and Week 2 deliverables have been completed, and future weeks will be added as development progresses.
+Currently, Week 1, Week 2, and Week 3 deliverables have been completed, and future weeks will be added as development progresses.
 
 ---
 
@@ -61,15 +61,56 @@ The project showcases modern web design principles with focus on responsive desi
 
 ---
 
+### ✅ Week 3 — QuizMaster Pro Interactive Quiz App
+
+A professional, feature-rich interactive quiz application built with **HTML5, CSS3, and JavaScript**.
+
+The project demonstrates advanced JavaScript functionality including DOM manipulation, state management, real-time timer implementation, and performance analytics with a polished user interface.
+
+**Key highlights**
+- **Interactive Quiz Functionality** - 10 multiple-choice questions with 60-second time limit
+- **Real-Time Timer** - Countdown timer with visual feedback
+- **Question Navigation** - Jump between questions, skip and return later
+- **Bookmark System** - Mark important questions for review
+- **State Management** - Comprehensive tracking of answers, progress, and quiz state
+- **Dynamic Content Generation** - Questions and options rendered dynamically from JavaScript
+- **Performance Analytics** - Detailed score calculations, grading system, and performance metrics
+- **Multi-Screen Interface** - Start screen, quiz screen, results screen, and review screen
+- **Answer Review** - Comprehensive review with filters (All, Correct, Incorrect, Skipped, Bookmarked)
+- **Responsive Design** - Clean, modern UI with sidebar navigation
+- **Progress Tracking** - Visual progress bar, question navigator, and quick statistics
+- **Semantic HTML** - Proper landmark elements and meta descriptions for SEO
+- **Professional Styling** - Modern color scheme, smooth animations, and intuitive layouts
+
+**Features**
+- Multiple screens for different phases (start, quiz, results, review)
+- Real-time progress tracking with visual indicators
+- Question navigator grid showing status of all questions
+- Quick stats sidebar (Answered, Remaining, Bookmarked counts)
+- Detailed performance analysis with personalized feedback
+- Grade mapping system (Excellent, Good, Average, Fair, Poor)
+- Time tracking and statistics
+- Clear Answer and Skip options
+- Answer review with explanation support
+
+**Scoring System**
+- Correct Answer: 1 point
+- Incorrect Answer: 0 points (no negative marking)
+- Skipped Question: 0 points
+
+**Technologies**: HTML5, CSS3, JavaScript (DOM, Events, State Management)  
+📂 **Project Folder**: `week3-interactive-quizapp`
+
 ## 🛠 Technologies Used
 
-- **HTML5** - Semantic markup, accessibility
-- **CSS3** - Flexbox, Grid, Media Queries, Animations, Variables
-- **Responsive Design** - Mobile-first approach
-- **Web Accessibility** - WCAG 2.1 compliance
+- **HTML5** - Semantic markup, accessibility, structured content
+- **CSS3** - Flexbox, Grid, Media Queries, Animations, Variables, Professional Styling
+- **JavaScript** - DOM manipulation, Event handling, State management, Timer implementation
+- **Responsive Design** - Mobile-first approach, adaptive layouts
+- **Web Accessibility** - WCAG 2.1 compliance, semantic landmarks, meta tags
 - **Git & GitHub** - Version control
 
-Future deliverables will introduce JavaScript interactivity, frameworks, and advanced tooling concepts.
+Future deliverables will introduce JavaScript frameworks, backend integration, and advanced tooling concepts.
 
 ---
 

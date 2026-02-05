@@ -142,7 +142,7 @@ h1, h2, h3
 ### Installation
 1. Clone or download the project
 ```bash
-git clone <repository-url>
+git clone https://github.com/vrajmodi2004/Internship-Bootcamp.git
 cd week2-landing-page
 ```
 
