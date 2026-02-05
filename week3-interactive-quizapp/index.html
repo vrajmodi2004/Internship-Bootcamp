@@ -13,13 +13,13 @@
             <div class="logo-icon">Q</div>
             <h1>QuizMaster Pro</h1>
         </div>
-        <div class="user-info"><span id="userDate">Thursday, February 05, 2026</span></div>
+        <!-- <div class="user-info"><span id="userDate">Thursday, February 05, 2026</span></div> -->
     </div>
 
     <div class="container">
         <div class="header">
-            <h1>QuizMaster Pro</h1>
-            <p>Test your knowledge with our comprehensive quiz platform. Answer all questions within the time limit and review your performance with detailed analytics.</p>
+            <!-- <h1>QuizMaster Pro</h1>
+            <p>Test your knowledge with our comprehensive quiz platform. Answer all questions within the time limit and review your performance with detailed analytics.</p> -->
         </div>
 
         <main class="content">
@@ -64,47 +64,48 @@
                         </div>
                         <div class="progress"><div class="progress-fill" id="progressFill" style="width: 10%"></div></div>
                     </div>
-                    <div class="timer-box" id="timerBox">
-                        <div class="timer-icon">⏱</div>
-                        <div class="timer-content">
-                            <div class="timer-label">Time Remaining</div>
-                            <div class="timer-value"><span id="timeLeft">60</span>s</div>
+                </div>
+
+                <div class="quiz-main-layout">
+                    <div class="question-container">
+                        <div class="question-header">
+                            <div class="question-number" id="questionNumber">Question 1</div>
+                            <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()">☆</button>
+                        </div>
+                        <div class="question-text" id="questionText"></div>
+                        <div class="options" id="optionsContainer"></div>
+                        <div class="quiz-controls">
+                            <div class="controls-left">
+                                <button class="btn-secondary" onclick="previousQuestion()" id="prevBtn">Previous</button>
+                                <button class="btn-text" onclick="clearAnswer()">Clear Answer</button>
+                            </div>
+                            <div class="controls-right">
+                                <button class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+                                <button class="btn btn-submit" id="submitBtn" onclick="confirmSubmit()">Submit Quiz</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="sidebar" id="sidebar">
-                    <div class="sidebar-section">
-                        <div class="sidebar-title">Question Navigator</div>
-                        <div class="question-navigator" id="questionNavigator"></div>
-                    </div>
-                    <div class="sidebar-section">
-                        <div class="sidebar-title">Quick Stats</div>
-                        <div style="font-size: 0.875em; color: #5f6368; line-height: 1.8;">
-                            <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Answered:</span><strong id="sidebarAnswered">0</strong></div>
-                            <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Remaining:</span><strong id="sidebarRemaining">10</strong></div>
-                            <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Bookmarked:</span><strong id="sidebarBookmarked">0</strong></div>
+                    <div class="sidebar" id="sidebar">
+                        <div class="timer-box" id="timerBox">
+                            <div class="timer-icon">⏱</div>
+                            <div class="timer-content">
+                                <div class="timer-label">Time Remaining</div>
+                                <div class="timer-value"><span id="timeLeft">60</span>s</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="question-container">
-                    <div class="question-header">
-                        <div class="question-number" id="questionNumber">Question 1</div>
-                        <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()">☆</button>
-                    </div>
-                    <div class="question-text" id="questionText"></div>
-                    <div class="options" id="optionsContainer"></div>
-                </div>
-
-                <div class="quiz-controls">
-                    <div class="controls-left">
-                        <button class="btn-secondary" onclick="previousQuestion()" id="prevBtn">Previous</button>
-                        <button class="btn-text" onclick="clearAnswer()">Clear Answer</button>
-                    </div>
-                    <div class="controls-right">
-                        <button class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
-                        <button class="btn btn-submit" id="submitBtn" onclick="confirmSubmit()">Submit Quiz</button>
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">Question Navigator</div>
+                            <div class="question-navigator" id="questionNavigator"></div>
+                        </div>
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">Quick Stats</div>
+                            <div style="font-size: 0.875em; color: #5f6368; line-height: 1.8;">
+                                <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Answered:</span><strong id="sidebarAnswered">0</strong></div>
+                                <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Remaining:</span><strong id="sidebarRemaining">10</strong></div>
+                                <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Bookmarked:</span><strong id="sidebarBookmarked">0</strong></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -16,17 +16,20 @@ body {
     border-bottom: 1px solid #dadce0;
     padding: 16px 24px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 24px;
+    margin: 0 auto 24px auto;
     border-radius: 8px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+    max-width: 900px;
+    width: 100%;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
+    justify-content: center;
 }
 
 .logo-icon {
@@ -49,7 +52,7 @@ body {
 }
 
 .user-info {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 12px;
     color: #5f6368;
@@ -73,7 +76,7 @@ body {
     border-top: 10px solid #1a73e8;
 }
 
-.header h1 {
+/* .header h1 {
     font-size: 2em;
     margin-bottom: 8px;
     color: #202124;
@@ -84,7 +87,7 @@ body {
     font-size: 1em;
     color: #5f6368;
     line-height: 1.6;
-}
+} */
 
 .content {
     padding: 48px 40px;
@@ -238,18 +241,24 @@ body {
 
 .quiz-screen {
     display: none;
+    position: relative;
+}
+
+.quiz-main-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+    align-items: start;
 }
 
 .sidebar {
-    position: fixed;
-    right: 24px;
-    top: 24px;
-    width: 280px;
+    position: relative;
     background: #fff;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
-    z-index: 100;
+    height: fit-content;
+    border: 1px solid #dadce0;
 }
 
 .sidebar-section {
@@ -270,7 +279,9 @@ body {
 }
 
 .quiz-header {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #dadce0;
 }
 
 .progress-container {
@@ -398,8 +409,8 @@ body {
     background: #fff;
     padding: 32px;
     border-radius: 8px;
-    margin-bottom: 24px;
     border: 1px solid #dadce0;
+    grid-column: 1;
 }
 
 .question-header {
@@ -918,12 +929,11 @@ body {
 }
 
 @media (max-width: 1024px) {
+    .quiz-main-layout {
+        grid-template-columns: 1fr;
+    }
     .sidebar {
-        position: relative;
-        right: auto;
-        top: auto;
         width: 100%;
-        margin-bottom: 24px;
     }
     .score-section {
         grid-template-columns: 1fr;

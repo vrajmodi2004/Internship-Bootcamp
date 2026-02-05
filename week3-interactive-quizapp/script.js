@@ -304,6 +304,8 @@ function reviewAnswers() {
     document.getElementById('resultsScreen').style.display = 'none';
     document.getElementById('reviewScreen').style.display = 'block';
     displayReviewItems();
+    window.scrollTo(0, 0);
+    document.getElementById('reviewContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function filterReview(filter) {
