@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster Pro - Professional Assessment Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <div class="logo-icon">Q</div>
+            <h1>QuizMaster Pro</h1>
+        </div>
+        <div class="user-info"><span id="userDate">Thursday, February 05, 2026</span></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>QuizMaster Pro</h1>
+            <p>Test your knowledge with our comprehensive quiz platform. Answer all questions within the time limit and review your performance with detailed analytics.</p>
+        </div>
+
+        <div class="content">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
+                <h2>Quiz Instructions</h2>
+                <div class="quiz-info">
+                    <div class="info-section">
+                        <div class="info-title">Quiz Overview</div>
+                        <div class="info-grid">
+                            <div class="info-card"><div class="info-card-value">10</div><div class="info-card-label">Questions</div></div>
+                            <div class="info-card"><div class="info-card-value">60s</div><div class="info-card-label">Time Limit</div></div>
+                            <div class="info-card"><div class="info-card-value">MCQ</div><div class="info-card-label">Question Type</div></div>
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-title">Features Available</div>
+                        <div class="quiz-info-item">Navigation between questions at any time</div>
+                        <div class="quiz-info-item">Bookmark important questions for review</div>
+                        <div class="quiz-info-item">Skip questions and return later</div>
+                        <div class="quiz-info-item">Visual progress tracking</div>
+                        <div class="quiz-info-item">Detailed performance analytics upon completion</div>
+                        <div class="quiz-info-item">Comprehensive answer review with explanations</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-title">Scoring Information</div>
+                        <div class="quiz-info-item">Each correct answer: 1 point</div>
+                        <div class="quiz-info-item">Incorrect answers: 0 points (no negative marking)</div>
+                        <div class="quiz-info-item">Skipped questions: 0 points</div>
+                    </div>
+                </div>
+                <div style="text-align: center;"><button class="btn btn-large" onclick="startQuiz()">Start Quiz</button></div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div class="quiz-screen" id="quizScreen">
+                <div class="quiz-header">
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span id="progressText">Question 1 of 10</span>
+                            <span id="answeredCount">0 answered</span>
+                        </div>
+                        <div class="progress"><div class="progress-fill" id="progressFill" style="width: 10%"></div></div>
+                    </div>
+                    <div class="timer-box" id="timerBox">
+                        <div class="timer-icon">⏱</div>
+                        <div class="timer-content">
+                            <div class="timer-label">Time Remaining</div>
+                            <div class="timer-value"><span id="timeLeft">60</span>s</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar" id="sidebar">
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">Question Navigator</div>
+                        <div class="question-navigator" id="questionNavigator"></div>
+                    </div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-title">Quick Stats</div>
+                        <div style="font-size: 0.875em; color: #5f6368; line-height: 1.8;">
+                            <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Answered:</span><strong id="sidebarAnswered">0</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Remaining:</span><strong id="sidebarRemaining">10</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin: 8px 0;"><span>Bookmarked:</span><strong id="sidebarBookmarked">0</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-container">
+                    <div class="question-header">
+                        <div class="question-number" id="questionNumber">Question 1</div>
+                        <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()">☆</button>
+                    </div>
+                    <div class="question-text" id="questionText"></div>
+                    <div class="options" id="optionsContainer"></div>
+                </div>
+
+                <div class="quiz-controls">
+                    <div class="controls-left">
+                        <button class="btn-secondary" onclick="previousQuestion()" id="prevBtn">Previous</button>
+                        <button class="btn-text" onclick="clearAnswer()">Clear Answer</button>
+                    </div>
+                    <div class="controls-right">
+                        <button class="btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+                        <button class="btn btn-submit" id="submitBtn" onclick="confirmSubmit()">Submit Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div class="results-screen" id="resultsScreen">
+                <div class="results-header">
+                    <h2>Quiz Completed</h2>
+                    <div class="completion-badge">Assessment Finished</div>
+                </div>
+                <div class="score-section">
+                    <div>
+                        <div class="score-circle">
+                            <div class="score-number" id="scoreNumber">0</div>
+                            <div class="score-text">out of 10</div>
+                        </div>
+                    </div>
+                    <div class="performance-analysis">
+                        <div class="analysis-title">Performance Analysis</div>
+                        <div class="performance-grade" id="performanceGrade">-</div>
+                        <div class="performance-message" id="resultMessage"></div>
+                        <div class="strength-weakness" id="strengthWeakness"></div>
+                    </div>
+                </div>
+                <div class="result-stats">
+                    <div class="stat-card"><div class="stat-icon">✓</div><div class="stat-value" id="correctCount">0</div><div class="stat-label">Correct</div></div>
+                    <div class="stat-card"><div class="stat-icon">✗</div><div class="stat-value" id="wrongCount">0</div><div class="stat-label">Incorrect</div></div>
+                    <div class="stat-card"><div class="stat-icon">-</div><div class="stat-value" id="skippedCount">0</div><div class="stat-label">Skipped</div></div>
+                    <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value" id="timeTaken">0s</div><div class="stat-label">Time Used</div></div>
+                </div>
+                <div class="result-actions">
+                    <button class="btn btn-large" onclick="reviewAnswers()">Review Answers</button>
+                    <button class="btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+                </div>
+            </div>
+
+            <!-- Review Screen -->
+            <div class="review-screen" id="reviewScreen">
+                <div class="review-header">
+                    <h2>Answer Review</h2>
+                    <p style="color: #5f6368; margin-top: 8px;">Review all questions with detailed explanations</p>
+                    <div class="review-filters">
+                        <button class="filter-btn active" onclick="filterReview('all')">All Questions</button>
+                        <button class="filter-btn" onclick="filterReview('correct')">Correct Only</button>
+                        <button class="filter-btn" onclick="filterReview('incorrect')">Incorrect Only</button>
+                        <button class="filter-btn" onclick="filterReview('skipped')">Skipped Only</button>
+                        <button class="filter-btn" onclick="filterReview('bookmarked')">Bookmarked</button>
+                    </div>
+                </div>
+                <div id="reviewContainer"></div>
+                <div class="result-actions">
+                    <button class="btn" onclick="backToResults()">Back to Results</button>
+                    <button class="btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
