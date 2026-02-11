@@ -1,16 +1,16 @@
-# Frontend Development Deliverables
+# Development BootCamp Deliverables
 
 This repository contains weekly frontend development deliverables completed as part of structured learning in modern web development.
 
 Each week focuses on building practical frontend skills through hands-on projects and progressive improvement.
 
-Currently, Week 1, Week 2, and Week 3 deliverables have been completed, and future weeks will be added as development progresses.
+Currently, Week 1, Week 2, Week 3, and Week 4 deliverables have been completed, with future weeks to be added as development progresses.
 
 ---
 
-## 📅 Completed Deliverables
+## Completed Deliverables
 
-### ✅ Week 1 — Semantic Profile Page
+### Week 1 — Semantic Profile Page
 
 A semantic and accessible profile webpage built entirely using **HTML5**.
 
@@ -25,11 +25,11 @@ The project focuses on correct semantic structuring of content and accessibility
 - Clean and readable markup
 
 **Technologies**: HTML5  
-📂 **Project Folder**: `week1-semantic-profile-page`
+**Project Folder**: `week1-semantic-profile-page`
 
 ---
 
-### ✅ Week 2 — BookNest Landing Page
+### Week 2 — BookNest Landing Page
 
 A premium, responsive book gallery landing page built with **HTML5 and CSS3**.
 
@@ -57,11 +57,11 @@ The project showcases modern web design principles with focus on responsive desi
 - Color palette: Browns (#8B5A3C), Reds (#C41E3A), Golds (#D4A574)
 
 **Technologies**: HTML5, CSS3, Responsive Design  
-📂 **Project Folder**: `week2-landing-page`
+**Project Folder**: `week2-landing-page`
 
 ---
 
-### ✅ Week 3 — QuizMaster Pro Interactive Quiz App
+### Week 3 — QuizMaster Pro Interactive Quiz App
 
 A professional, feature-rich interactive quiz application built with **HTML5, CSS3, and JavaScript**.
 
@@ -99,9 +99,61 @@ The project demonstrates advanced JavaScript functionality including DOM manipul
 - Skipped Question: 0 points
 
 **Technologies**: HTML5, CSS3, JavaScript (DOM, Events, State Management)  
-📂 **Project Folder**: `week3-interactive-quizapp`
+**Project Folder**: `week3-interactive-quizapp`
 
-## 🛠 Technologies Used
+---
+
+### Week 4 — Modularized QuizMaster Pro with Testing
+
+A production-ready, enterprise-grade quiz application built with **ES6+ Modules**, **Jest Testing Framework**, and professional software engineering practices.
+
+This is an advanced iteration of Week 3 that demonstrates **code organization, modularity, unit testing, and quality assurance** through comprehensive test coverage and industry-standard practices.
+
+**Key highlights**
+- ES6 Module System - Code organized into 5 focused, reusable modules (app, quizState, questions, dom, utils)
+- Jest Unit Testing - Comprehensive test suite with dedicated test files for state management and utilities
+- Code Coverage Analysis - Detailed coverage reports in multiple formats (HTML, LCOV, JSON)
+- Separation of Concerns - Business logic cleanly separated from DOM manipulation
+- Test-Driven Development - Core logic thoroughly tested before deployment
+- Production-Ready Code - Maintainable, scalable, and testable codebase
+- Quality Metrics - Coverage reports showing statement, branch, function, and line coverage
+- NPM Scripts - Convenient commands for testing, coverage analysis, and development
+
+**Module Architecture**
+- app.js - Application orchestration
+- quizState.js - Quiz state management with comprehensive tests
+- questions.js - Quiz question data management
+- dom.js - DOM manipulation and rendering
+- utils.js - Utility functions with unit tests
+
+**Testing & Quality Assurance**
+- Unit tests for state management and utility functions
+- Automated test runner with watch mode
+- Code coverage reports accessible via HTML interface
+- Test verification scripts for validation
+- Jest configuration for ES6 module testing
+
+**Features** (Inherited from Week 3 + Enhancements)
+- 10 multiple-choice questions with 60-second timer
+- Question navigation and bookmarking system
+- Real-time progress tracking and analytics
+- Four-screen interface (Start, Quiz, Results, Review)
+- Answer review with filtering capabilities
+- Performance analytics with grade mapping
+- Responsive design with professional styling
+- Thoroughly tested, modular, production-grade codebase
+
+**Development Workflow**
+- Install dependencies: `npm install`
+- Run tests: `npm test`
+- Watch mode: `npm run test:watch`
+- Coverage analysis: `npm run test:coverage`
+- Development server: `npm run serve`
+
+**Technologies**: HTML5, CSS3, JavaScript (ES6+ Modules, DOM, State Management), Jest, npm  
+**Project Folder**: `week4-modularized-quizapp`
+
+## Technologies Used
 
 - **HTML5** - Semantic markup, accessibility, structured content
 - **CSS3** - Flexbox, Grid, Media Queries, Animations, Variables, Professional Styling

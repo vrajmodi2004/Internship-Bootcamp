@@ -77,7 +77,7 @@ body {
 }
 
 .content {
-    padding: 48px 40px;
+    padding: 30px 40px;
 }
 
 .start-screen {
@@ -87,9 +87,14 @@ body {
 
 .start-screen h2 {
     color: #202124;
-    margin-bottom: 24px;
-    font-size: 1.5em;
+    margin-bottom: 8px;
+    font-size: 2.5em;
     font-weight: 400;
+    text-align: center;
+}
+
+.center-text {
+    text-align: center !important;
 }
 
 .quiz-info {
