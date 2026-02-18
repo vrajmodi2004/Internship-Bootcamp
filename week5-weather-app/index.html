@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherNow</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <span class="logo">WeatherNow</span>
+    </header>
+
+    <div class="search-container">
+      <div class="search-box">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Search for a city..."
+          autocomplete="off"
+        />
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Fetching weather data...</p>
+    </div>
+
+    <div id="error" class="error hidden">
+      <span class="error-icon">⚠</span>
+      <p id="errorMsg">Something went wrong.</p>
+      <button id="retryBtn">Try Again</button>
+    </div>
+
+    <div id="weatherCard" class="weather-card hidden">
+      <div class="card-top">
+        <div class="location">
+          <h2 id="cityName">—</h2>
+          <p id="countryName">—</p>
+        </div>
+        <div class="weather-icon" id="weatherIcon">
+          <img id="weatherIconImg" src="" alt="weather icon" />
+        </div>
+      </div>
+
+      <div class="temperature">
+        <span id="tempValue">—</span>
+        <span class="unit">°C</span>
+      </div>
+
+      <p class="description" id="weatherDesc">—</p>
+
+      <div class="details-grid">
+        <div class="detail">
+          <span class="detail-label">Max Temperature</span>
+          <span class="detail-value" id="tempmax">—</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Humidity</span>
+          <span class="detail-value" id="humidity">—</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Wind Speed</span>
+          <span class="detail-value" id="windSpeed">—</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Min Temperature</span>
+          <span class="detail-value" id="tempmin">—</span>
+        </div>
+      </div>
+
+      <p class="updated-at" id="updatedAt">—</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
