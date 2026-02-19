@@ -4,7 +4,7 @@ This repository contains weekly frontend development deliverables completed as p
 
 Each week focuses on building practical frontend skills through hands-on projects and progressive improvement.
 
-Currently, Week 1, Week 2, Week 3, and Week 4 deliverables have been completed, with future weeks to be added as development progresses.
+Currently, Week 1 through Week 5 deliverables have been completed, with future weeks to be added as development progresses.
 
 ---
 
@@ -152,6 +152,38 @@ This is an advanced iteration of Week 3 that demonstrates **code organization, m
 
 **Technologies**: HTML5, CSS3, JavaScript (ES6+ Modules, DOM, State Management), Jest, npm  
 **Project Folder**: `week4-modularized-quizapp`
+
+---
+
+### Week 5 — WeatherNow Application
+
+A responsive weather application demonstrating API integration and asynchronous JavaScript built with **HTML5, CSS3, and JavaScript**.
+
+The project showcases real-world development practices including external API consumption, error handling, loading states, and responsive user interface design.
+
+**Key highlights**
+- **API Integration** - OpenWeatherMap REST API integration with proper error handling
+- **Asynchronous Programming** - Async/await pattern for network requests
+- **State Management** - DOM state tracking for loading, error, and success states
+- **Error Handling** - Comprehensive error messages for network, validation, and API errors
+- **Responsive Design** - Mobile-first responsive layout
+- **User Experience** - Loading animations, retry functionality, and intuitive interface
+- **Real-Time Data** - Live weather information with timestamps
+- **Code Quality** - JSDoc comments, clean function organization, semantic HTML
+
+**Features**
+- City weather search with validation
+- Display of current conditions and detailed metrics
+- Real-time temperature, humidity, wind speed data
+- Maximum and minimum temperature tracking
+- Weather-specific icons from OpenWeatherMap
+- Loading indicator for data fetching
+- Error recovery with retry option
+- Last update timestamp display
+- Professional card-based interface
+
+**Technologies**: HTML5, CSS3, JavaScript (Async/Await, Fetch API, DOM), OpenWeatherMap API  
+**Project Folder**: `week5-weather-app`
 
 ## Technologies Used
 
