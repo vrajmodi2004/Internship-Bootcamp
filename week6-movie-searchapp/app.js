@@ -1,18 +1,8 @@
-/* =============================================
-   CineSearch — app.js
-   Features:
-   - Debounced search (350ms)
-   - Pagination
-   - Recent searches via localStorage
-   - Movie detail caching via sessionStorage
-   - OMDB API (free key for demo; replace with your own)
-   ============================================= */
-
-const API_KEY  = '673c8a05';     
+const API_KEY  = '673c8a05';          
 const BASE_URL = 'https://www.omdbapi.com/';
-const RESULTS_PER_PAGE = 10;  
+const RESULTS_PER_PAGE = 10;          
 const RECENT_MAX = 8;
-const CACHE_PREFIX = 'cs_movie_';   
+const CACHE_PREFIX = 'cs_movie_';    
 const RECENT_KEY  = 'cs_recent';     
 
 const searchInput    = document.getElementById('searchInput');
@@ -40,18 +30,24 @@ let state = {
   loading:     false,
 };
 
+
 function debounce(fn, delay) {
   let timer;
-  return function (...args) {
+  function debounced(...args) {
     clearTimeout(timer);
     searchStatus.textContent = 'Searching…';
     timer = setTimeout(() => {
       searchStatus.textContent = '';
       fn.apply(this, args);
     }, delay);
-    return timer;
+  }
+  debounced.cancel = () => {
+    clearTimeout(timer);
+    timer = null;
   };
+  return debounced;
 }
+
 
 function getRecent() {
   try {
@@ -94,6 +90,7 @@ recentTags.addEventListener('click', e => {
   triggerSearch(q, 1);
 });
 
+
 function getCached(imdbID) {
   try {
     const raw = sessionStorage.getItem(CACHE_PREFIX + imdbID);
@@ -104,7 +101,7 @@ function getCached(imdbID) {
 function setCache(imdbID, data) {
   try {
     sessionStorage.setItem(CACHE_PREFIX + imdbID, JSON.stringify(data));
-  } catch { }
+  } catch {  }
 }
 
 async function searchMovies(query, page = 1) {
@@ -129,6 +126,10 @@ async function getMovieDetail(imdbID) {
 async function triggerSearch(query, page) {
   query = query.trim();
   if (!query) {
+    showEmptyState();
+    return;
+  }
+  if (!searchInput.value.trim()) {
     showEmptyState();
     return;
   }
@@ -204,6 +205,7 @@ function renderMeta() {
   const end   = Math.min(state.currentPage * RESULTS_PER_PAGE, state.totalResults);
   searchMeta.textContent = `Showing ${start}–${end} of ${state.totalResults.toLocaleString()} results`;
 }
+
 
 function renderPagination() {
   const totalPages = Math.ceil(state.totalResults / RESULTS_PER_PAGE);
@@ -326,6 +328,7 @@ function loaderHTML() {
   </div>`;
 }
 
+
 const debouncedSearch = debounce((query) => {
   triggerSearch(query, 1);
 }, 350);
@@ -335,16 +338,17 @@ searchInput.addEventListener('input', e => {
   clearBtn.classList.toggle('visible', val.length > 0);
 
   if (!val.trim()) {
-    clearTimeout(window._debounceTimer);
+    debouncedSearch.cancel();
     searchStatus.textContent = '';
     showEmptyState();
     return;
   }
 
-  window._debounceTimer = debouncedSearch(val);
+  debouncedSearch(val);
 });
 
 clearBtn.addEventListener('click', () => {
+  debouncedSearch.cancel();
   searchInput.value = '';
   clearBtn.classList.remove('visible');
   searchStatus.textContent = '';
@@ -376,13 +380,17 @@ function showEmptyState() {
 }
 
 function showError(msg) {
+  if (!searchInput.value.trim()) {
+    showEmptyState();
+    return;
+  }
   errorMsg.textContent = msg;
   errorMsg.classList.add('visible');
   resultsSection.classList.remove('visible');
   pagination.innerHTML = '';
 }
 
-function hideError() { errorMsg.classList.remove('visible'); }
+function hideError() { errorMsg.classList.remove('visible'); errorMsg.textContent = ''; }
 
 
 function escapeHtml(str) {
@@ -398,7 +406,6 @@ function escapeAttr(str) {
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
-
 
 renderRecent();
 showEmptyState();

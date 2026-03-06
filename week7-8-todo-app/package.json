@@ -1,0 +1,13 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A modular todo application",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "node tests/utils.test.js && node tests/persistence.test.js"
+  },
+  "keywords": ["todo", "app"],
+  "author": "",
+  "license": "ISC"
+}

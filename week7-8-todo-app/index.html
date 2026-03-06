@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-name">TaskFlow</span>
+    </div>
+    <div id="nav-items"></div>
+    <div id="tags-section"></div>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="main-header">
+      <div class="header-left">
+        <h1 id="page-title">All Tasks</h1>
+        <span id="task-count">0 tasks</span>
+      </div>
+      <div class="header-right"></div>
+    </header>
+
+
+    <div class="add-todo-card" id="add-todo-card">
+      <div class="add-todo-main">
+        <button id="add-btn" title="Add task">＋</button>
+        <input id="add-input" type="text" placeholder="Add a task..." />
+      </div>
+      <div id="add-extra">
+        <div class="extra-row">
+          <label>Due Date</label>
+          <input id="add-duedate" type="date" class="extra-input" />
+        </div>
+        <div class="extra-row">
+          <label>Priority</label>
+          <select id="add-priority" class="extra-input">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <div class="extra-row">
+          <label>Tags</label>
+          <input id="add-tags" type="text" class="extra-input" placeholder="work, personal..." />
+        </div>
+        <div class="extra-row">
+          <label>Note</label>
+          <input id="add-note" type="text" class="extra-input" placeholder="Optional note..." />
+        </div>
+        <div class="extra-actions">
+          <button id="add-cancel" class="btn-ghost">Cancel</button>
+          <button id="add-submit" class="btn-primary">Add Task</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="todo-list"></div>
+
+  </main>
+</div>
+
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>

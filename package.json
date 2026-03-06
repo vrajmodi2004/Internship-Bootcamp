@@ -1,0 +1,20 @@
+{
+  "name": "bootcamp",
+  "version": "1.0.0",
+  "description": "This repository contains weekly frontend development deliverables completed as part of structured learning in modern web development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrajmodi2004/Internship-Bootcamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vrajmodi2004/Internship-Bootcamp/issues"
+  },
+  "homepage": "https://github.com/vrajmodi2004/Internship-Bootcamp#readme"
+}
