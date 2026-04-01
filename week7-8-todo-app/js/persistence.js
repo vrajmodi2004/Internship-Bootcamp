@@ -1,26 +1,81 @@
 import { STORAGE_KEY } from './constants.js';
 
+let db = null;
+
+// Initialize IndexedDB
+const initDB = () => {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('TaskflowDB', 1);
+
+    request.onerror = () => reject(request.error);
+    
+    request.onupgradeneeded = (event) => {
+      const database = event.target.result;
+      if (!database.objectStoreNames.contains('todos')) {
+        database.createObjectStore('todos');
+      }
+    };
+
+    request.onsuccess = () => {
+      db = request.result;
+      resolve(db);
+    };
+  });
+};
+
 export const persistence = {
-  load() {
+  async load() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return [];
-      const parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed : [];
+      if (!db) await initDB();
+      
+      return new Promise((resolve) => {
+        const transaction = db.transaction('todos', 'readonly');
+        const store = transaction.objectStore('todos');
+        const request = store.get(STORAGE_KEY);
+
+        request.onsuccess = () => {
+          const data = request.result;
+          resolve(Array.isArray(data) ? data : []);
+        };
+
+        request.onerror = () => resolve([]);
+      });
     } catch {
       return [];
     }
   },
 
-  save(todos) {
+  async save(todos) {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
-    } catch {
-      console.warn('Could not persist todos');
+      if (!db) await initDB();
+      
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction('todos', 'readwrite');
+        const store = transaction.objectStore('todos');
+        const request = store.put(todos, STORAGE_KEY);
+
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+      });
+    } catch (error) {
+      console.warn('Could not persist todos:', error);
     }
   },
 
-  clear() {
-    localStorage.removeItem(STORAGE_KEY);
+  async clear() {
+    try {
+      if (!db) await initDB();
+      
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction('todos', 'readwrite');
+        const store = transaction.objectStore('todos');
+        const request = store.delete(STORAGE_KEY);
+
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+      });
+    } catch (error) {
+      console.warn('Could not clear todos:', error);
+    }
   },
 };

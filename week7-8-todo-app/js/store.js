@@ -8,13 +8,18 @@ import { FILTERS } from './constants.js';
 
 
 let state = {
-  todos:       persistence.load(),
+  todos:       [],
   filter:      FILTERS.ALL,
   activeTag:   null,
 };
 
 let listeners = [];
 
+// Initialize with persisted data
+export const initStore = async () => {
+  state.todos = await persistence.load();
+  notify();
+};
 
 export const subscribe   = (fn) => { listeners.push(fn); };
 export const unsubscribe = (fn) => { listeners = listeners.filter(l => l !== fn); };

@@ -1,8 +1,10 @@
-import { subscribe, getSnapshot } from './store.js';
+import { subscribe, getSnapshot, initStore } from './store.js';
 import { render, initAddForm } from './ui.js';
 
 initAddForm();
 
 subscribe(render);
 
-render(getSnapshot());
+initStore().then(() => {
+  render(getSnapshot());
+});
